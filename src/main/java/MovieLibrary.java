@@ -8,7 +8,7 @@ public class MovieLibrary {
     public static void main(String[] args) {
 
         ObjectMapper mapper = new ObjectMapper(); // stworzyc metode w klasie Movies zeby znowu nie zasmiecalo main
-        File movies = new File("movies.json"); // to jest ok
+        File movies = new File("src/main/resources/movies.json"); // to jest ok
         try {
             Movie[] movieList = mapper.readValue(movies, Movie[].class);
             System.out.println(Arrays.asList(movieList));
