@@ -3,9 +3,8 @@ public class Director {
     private String firstName;
     private String lastName;
 
-    public Director(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Director() {
+
     }
 
     public String getFirstName() {
@@ -18,6 +17,9 @@ public class Director {
 
     @Override
     public String toString() {
-        return getFirstName() + getLastName();
+        return "Director{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

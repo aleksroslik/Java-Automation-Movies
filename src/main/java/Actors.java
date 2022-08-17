@@ -1,11 +1,9 @@
-public class Actor {
+public class Actors {
 
     private String firstName;
     private String lastName;
 
-    public Actor(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Actors() {
     }
 
     public String getFirstName() {
@@ -18,6 +16,9 @@ public class Actor {
 
     @Override
     public String toString() {
-        return getFirstName() + getLastName();
+        return "Actors{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

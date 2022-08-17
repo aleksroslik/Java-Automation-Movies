@@ -1,20 +1,20 @@
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class MovieLibrary {
 
     public static void main(String[] args) {
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-        // to ma zostac bo dzieki temu toleruje pojedynczy bracket na samej gorze
+        ObjectMapper mapper = new ObjectMapper(); // stworzyc metode w klasie Movies zeby znowu nie zasmiecalo main
         File movies = new File("movies.json"); // to jest ok
         try {
             Movie[] movieList = mapper.readValue(movies, Movie[].class);
-            System.out.println(movieList.toString());
+            System.out.println(Arrays.asList(movieList));
+            /*List<Movie> movieList = mapper.readValue(movies, new TypeReference<List<Movie>>() {
+            });
+            System.out.println(movieList);*/
         } catch (IOException e) {
             e.printStackTrace();
         }
