@@ -6,6 +6,11 @@ public class Actors {
     public Actors() {
     }
 
+    public Actors(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -16,9 +21,6 @@ public class Actors {
 
     @Override
     public String toString() {
-        return "Actors{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return getFirstName() + ' ' + getLastName();
     }
 }

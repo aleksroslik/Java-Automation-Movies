@@ -6,7 +6,7 @@
         "lastName":"Darabont"
       },
       "genre":"DRAMA",
-      "date":"1994",
+      "date":1994,
       "actors":[
         {
           "firstName":"Tim",
@@ -29,7 +29,7 @@
         "lastName":"Fincher"
       },
       "genre":"THRILLER",
-      "date":"1995",
+      "date":1995,
       "actors":[
         {
           "firstName":"Morgan",
@@ -52,7 +52,7 @@
         "lastName":"Craven"
       },
       "genre":"HORROR",
-      "date":"1996",
+      "date":1996,
       "actors":[
         {
           "firstName":"Neve",
@@ -75,7 +75,7 @@
         "lastName":"Noyce"
       },
       "genre":"CRIME",
-      "date":"1999",
+      "date":1999,
       "actors":[
         {
           "firstName":"Denzel",
@@ -98,7 +98,7 @@
         "lastName":"Stahelski"
       },
       "genre":"ACTION",
-      "date":"2014",
+      "date":2014,
       "actors":[
         {
           "firstName":"Keanu",
@@ -121,7 +121,7 @@
         "lastName":"Fuqua"
       },
       "genre":"ACTION",
-      "date":"2014",
+      "date":2014,
       "actors":[
         {
           "firstName":"Denzel",
@@ -144,7 +144,7 @@
         "lastName":"Donner"
       },
       "genre":"Adventure",
-      "date":"1985",
+      "date":1985,
       "actors":[
         {
           "firstName":"Sean",
@@ -167,7 +167,7 @@
         "lastName":"Miller"
       },
       "genre":"ACTION",
-      "date":"2016",
+      "date":2016,
       "actors":[
         {
           "firstName":"Ryan",
@@ -190,7 +190,7 @@
         "lastName":"Whedon"
       },
       "genre":"SCI-FI",
-      "date":"2005",
+      "date":2005,
       "actors":[
         {
           "firstName":"Nathan",

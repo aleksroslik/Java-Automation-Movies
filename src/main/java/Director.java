@@ -17,9 +17,6 @@ public class Director {
 
     @Override
     public String toString() {
-        return "Director{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return getFirstName() + ' ' + getLastName();
     }
 }
