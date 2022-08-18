@@ -10,8 +10,6 @@ public class ListModifier {
     static ObjectMapper mapper = new ObjectMapper();
     File movieFile = new File("src/main/resources/movies.json");
     List<Movie> movieList = mapper.readValue(movieFile, new TypeReference<List<Movie>>() {});
-    Actors actors = new Actors();
-    Movie movie = new Movie();
     Scanner input = new Scanner(System.in);
 
     public ListModifier() throws IOException {
@@ -24,6 +22,18 @@ public class ListModifier {
         System.out.println("3 - Search for movies by actors name");
     }
 
+    public void findMovieByDate() {
+        System.out.println("Enter 2 dates (years to and from) to filter movies");
+        int yearFrom = input.nextInt();
+        int yearTo = input.nextInt();
+        for (Movie movie : movieList) {
+            if (movie.getDate() >= yearFrom && movie.getDate() <= yearTo) {
+                System.out.println(movie);
+            }
+        }
+        System.out.println("No movies found :(");
+    }
+
     public void findMovieByActor() {
         System.out.println("Enter actor's name");
         String actorName = input.nextLine();
@@ -34,18 +44,11 @@ public class ListModifier {
                 System.out.println(movie);
             }
         }
+        System.out.println("Who?"); //zerkac jeszcze na to bo wyswietla sie pomimo wyniku
     }
 
-    public void readFile() {
-        try {
-            Movie[] movieList = mapper.readValue(movieFile, Movie[].class);
-            System.out.println(Arrays.asList(movieList));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void randomMovie() throws IOException {
+    public void randomMovie() {
         System.out.println("Enter a number between 0-6");
         int userSelection = input.nextInt();
         System.out.println(movieList.get(userSelection));

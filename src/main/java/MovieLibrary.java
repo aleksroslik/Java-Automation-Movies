@@ -12,9 +12,7 @@ public class MovieLibrary {
 
         int userInput = input.nextInt();
         switch (userInput) {
-            case 1 -> {
-                System.out.println("enter from-to dates in year format");
-            }
+            case 1 -> listModifier.findMovieByDate();
             case 2 -> listModifier.randomMovie();
             case 3 -> listModifier.findMovieByActor();
             default -> System.out.println("Sorry - try again!");

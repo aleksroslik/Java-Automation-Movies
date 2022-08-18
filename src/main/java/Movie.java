@@ -8,15 +8,6 @@ public class Movie {
     private int date;
     private List<Actors> actors;
 
-
-    /*public Movie(String title, Director director, String genre, int date, List<Actors> actors) {
-        this.title = title;
-        this.director = director;
-        this.genre = genre;
-        this.date = date;
-        this.actors = actors;
-    }*/
-
     public Movie() {
 
     }
