@@ -91,6 +91,52 @@
         }
       ]
     },
+   {
+     "title":"Event Horizon",
+     "director":{
+       "firstName":"Paul",
+       "lastName":"Anderson"
+     },
+     "genre":"HORROR",
+     "date":1997,
+     "actors":[
+       {
+         "firstName":"Laurence",
+         "lastName":"Fishbourne"
+       },
+       {
+         "firstName":"Sam",
+         "lastName":"Neil"
+       },
+       {
+         "firstName":"Kathleen",
+         "lastName":"Quinlan"
+       }
+     ]
+   },
+   {
+     "title":"The Craft",
+     "director":{
+       "firstName":"Andrew",
+       "lastName":"Fleming"
+     },
+     "genre":"Horror",
+     "date":1996,
+     "actors":[
+       {
+         "firstName":"Robin",
+         "lastName":"Tunney"
+       },
+       {
+         "firstName":"Fairuza",
+         "lastName":"Balk"
+       },
+       {
+         "firstName":"Neve",
+         "lastName":"Campbell"
+       }
+     ]
+   },
 	{
       "title":"John Wick",
       "director":{
@@ -114,7 +160,7 @@
         }
       ]
     },
-{
+    {
       "title":"The Equalizer",
       "director":{
         "firstName":"Antoine",
@@ -137,7 +183,7 @@
         }
       ]
     },
-{
+    {
       "title":"The Goonies",
       "director":{
         "firstName":"Richard",
@@ -160,7 +206,7 @@
         }
       ]
     },
-{
+    {
       "title":"Deadpool",
       "director":{
         "firstName":"Tim",
@@ -183,7 +229,7 @@
         }
       ]
     },
-{
+    {
       "title":"Serenity",
       "director":{
         "firstName":"Joss",

@@ -9,10 +9,15 @@ public class ListModifier {
 
     static ObjectMapper mapper = new ObjectMapper();
     File movieFile = new File("src/main/resources/movies.json");
-    List<Movie> movieList = mapper.readValue(movieFile, new TypeReference<List<Movie>>() {});
+    List<Movie> movieList;
     Scanner input = new Scanner(System.in);
 
-    public ListModifier() throws IOException {
+    {
+        try {
+            movieList = mapper.readValue(movieFile, new TypeReference<List<Movie>>() {});
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void menuOptions() {
@@ -28,10 +33,9 @@ public class ListModifier {
         int yearTo = input.nextInt();
         for (Movie movie : movieList) {
             if (movie.getDate() >= yearFrom && movie.getDate() <= yearTo) {
-                System.out.println(movie);
+                System.out.println(movie.getTitle());
             }
         }
-        System.out.println("No movies found :(");
     }
 
     public void findMovieByActor() {
@@ -39,18 +43,15 @@ public class ListModifier {
         String actorName = input.nextLine();
         String actorSurname = input.nextLine();
         for (Movie movie : movieList) {
-            if(movie.getActors().stream().anyMatch(m -> m.getFirstName().equals(actorName))
-                && movie.getActors().stream().anyMatch(m -> m.getLastName().equals(actorSurname))) {
-                System.out.println(movie);
+            if (movie.getActors().stream().anyMatch(m -> m.getFirstName().equals(actorName))
+                    && movie.getActors().stream().anyMatch(m -> m.getLastName().equals(actorSurname))) {
+                System.out.println(movie.getTitle());
             }
         }
-        System.out.println("Who?"); //zerkac jeszcze na to bo wyswietla sie pomimo wyniku
     }
 
-
-    public void randomMovie() {
-        System.out.println("Enter a number between 0-6");
-        int userSelection = input.nextInt();
-        System.out.println(movieList.get(userSelection));
+    public void randomMovieGenerator() {
+        Movie movie = new Movie();
+        System.out.println(movie.getRandomElement(movieList));
     }
 }

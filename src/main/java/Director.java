@@ -4,7 +4,6 @@ public class Director {
     private String lastName;
 
     public Director() {
-
     }
 
     public String getFirstName() {
