@@ -1,20 +1,56 @@
-import java.util.Scanner;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.Random;
 
 public class MovieLibrary {
 
-    public static void main(String[] args) {
+    List<Movie> movieList;
+    static ObjectMapper mapper = new ObjectMapper();
+    File movieFile = new File("src/main/resources/movies.json");
 
-        ListModifier listModifier = new ListModifier();
-        Scanner input = new Scanner(System.in);
-
-        listModifier.menuOptions();
-
-        int userInput = input.nextInt();
-        switch (userInput) {
-            case 1 -> listModifier.findMovieByDate();
-            case 2 -> listModifier.randomMovieGenerator();
-            case 3 -> listModifier.findMovieByActor();
-            default -> System.out.println("Sorry - try again!");
+    {
+        try {
+            movieList = mapper.readValue(movieFile, new TypeReference<List<Movie>>() {});
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
+    public void menuOptions() {
+        System.out.println("Select from the following options:");
+        System.out.println("1 - Search for movies by date");
+        System.out.println("2 - Get full information for a random movie");
+        System.out.println("3 - Search for movies by actors name");
+    }
+
+    public void findMovieByDate(int yearFrom, int yearTo) {
+        for (Movie movie : movieList) {
+            if (movie.getDate() >= yearFrom && movie.getDate() <= yearTo) {
+                System.out.println(movie.getTitle());
+            }
+        }
+    }
+
+    public void findMovieByActor(String firstName, String lastName) {
+        for (Movie movie : movieList) {
+            if (movie.getActors().stream().anyMatch(m -> m.getFirstName().equals(firstName))
+                    && movie.getActors().stream().anyMatch(m -> m.getLastName().equals(lastName))) {
+                System.out.println(movie.getTitle());
+            }
+        }
+    }
+
+    public Movie getRandomElement(List<Movie> movieList) {
+        Random randomMovie = new Random();
+        return movieList.get(randomMovie.nextInt(movieList.size()));
+    }
+
+    public void randomMovieGenerator() {
+        System.out.println(getRandomElement(movieList));
+    }
 }
+

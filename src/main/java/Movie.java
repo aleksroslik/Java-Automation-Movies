@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Random;
 
 public class Movie {
 
@@ -7,7 +6,7 @@ public class Movie {
     private Director director;
     private String genre;
     private int date;
-    private List<Actors> actors;
+    private List<Actor> actors;
 
     public Movie() {
     }
@@ -28,13 +27,8 @@ public class Movie {
         return director;
     }
 
-    public List<Actors> getActors() {
+    public List<Actor> getActors() {
         return actors;
-    }
-
-    public Movie getRandomElement(List<Movie> movieList) {
-        Random randomMovie = new Random();
-        return movieList.get(randomMovie.nextInt(movieList.size()));
     }
 
     @Override

@@ -1,10 +1,7 @@
-public class Actors {
+public abstract class Person {
 
     private String firstName;
     private String lastName;
-
-    public Actors() {
-    }
 
     public String getFirstName() {
         return firstName;
