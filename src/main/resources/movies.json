@@ -120,7 +120,7 @@
        "firstName":"Andrew",
        "lastName":"Fleming"
      },
-     "genre":"Horror",
+     "genre":"HORROR",
      "date":1996,
      "actors":[
        {
@@ -189,7 +189,7 @@
         "firstName":"Richard",
         "lastName":"Donner"
       },
-      "genre":"Adventure",
+      "genre":"ADVENTURE",
       "date":1985,
       "actors":[
         {

@@ -8,13 +8,13 @@ import java.util.Random;
 
 public class MovieLibrary {
 
-    List<Movie> movieList;
-    static ObjectMapper mapper = new ObjectMapper();
-    File movieFile = new File("src/main/resources/movies.json");
+    private static List<Movie> movieList;
 
+    ObjectMapper mapper = new ObjectMapper();
+    File movieFile = new File("src/main/resources/movies.json");
     {
         try {
-            movieList = mapper.readValue(movieFile, new TypeReference<List<Movie>>() {});
+            movieList = mapper.readValue(movieFile, new TypeReference<>() {});
         } catch (IOException e) {
             e.printStackTrace();
         }
